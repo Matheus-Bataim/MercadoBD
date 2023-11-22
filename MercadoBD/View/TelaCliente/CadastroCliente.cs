@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+using MercadoBD.Controller;
+using MercadoBD.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +20,15 @@ namespace MercadoBD.View.TelaCliente
             InitializeComponent();
         }
 
+        private void btn_CadastrarCli_Click(object sender, EventArgs e)
+        {
+            // oque o usuario digita e guarda nessas caixas
+            Cliente.NomeClientes = tbx_NomeCli.Text;
+            Cliente.EmailClientes = tbx_EmailCli.Text;
+            Cliente.FoneClientes = foneArea.Text;
 
+            ManipulaCliente manipulaCliente = new ManipulaCliente();
+            manipulaCliente.AddCliente();
+        }
     }
 }

@@ -9,12 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controller\" />
-    <Folder Include="Model\" />
-    <Folder Include="View\TelaProduto\" />
-    <Folder Include="View\TelaUsuario\" />
-    <Folder Include="View\TelaPedido\" />
-    <Folder Include="View\TelaFuncionarios\" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
 </Project>

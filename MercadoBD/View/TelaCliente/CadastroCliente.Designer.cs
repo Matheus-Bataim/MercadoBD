@@ -32,10 +32,10 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            maskedTextBox1 = new MaskedTextBox();
-            button1 = new Button();
+            foneArea = new MaskedTextBox();
+            btn_CadastrarCli = new Button();
+            tbx_NomeCli = new TextBox();
+            tbx_EmailCli = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -75,49 +75,47 @@
             label4.TabIndex = 3;
             label4.Text = "Phone";
             // 
-            // comboBox1
+            // foneArea
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(49, 126);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(264, 23);
-            comboBox1.TabIndex = 4;
+            foneArea.Location = new Point(49, 245);
+            foneArea.Mask = "(99) 0000-0000";
+            foneArea.Name = "foneArea";
+            foneArea.Size = new Size(100, 23);
+            foneArea.TabIndex = 7;
             // 
-            // comboBox2
+            // btn_CadastrarCli
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(49, 182);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(264, 23);
-            comboBox2.TabIndex = 5;
+            btn_CadastrarCli.Location = new Point(107, 338);
+            btn_CadastrarCli.Name = "btn_CadastrarCli";
+            btn_CadastrarCli.Size = new Size(206, 77);
+            btn_CadastrarCli.TabIndex = 8;
+            btn_CadastrarCli.Text = "Cadastrar";
+            btn_CadastrarCli.UseVisualStyleBackColor = true;
+            btn_CadastrarCli.Click += btn_CadastrarCli_Click;
             // 
-            // maskedTextBox1
+            // tbx_NomeCli
             // 
-            maskedTextBox1.Location = new Point(49, 245);
-            maskedTextBox1.Mask = "(999) 000-0000";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(100, 23);
-            maskedTextBox1.TabIndex = 7;
+            tbx_NomeCli.Location = new Point(49, 126);
+            tbx_NomeCli.Name = "tbx_NomeCli";
+            tbx_NomeCli.Size = new Size(202, 23);
+            tbx_NomeCli.TabIndex = 9;
             // 
-            // button1
+            // tbx_EmailCli
             // 
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(49, 304);
-            button1.Name = "button1";
-            button1.Size = new Size(158, 47);
-            button1.TabIndex = 8;
-            button1.Text = "Cadastrar ";
-            button1.UseVisualStyleBackColor = true;
+            tbx_EmailCli.Location = new Point(49, 182);
+            tbx_EmailCli.Name = "tbx_EmailCli";
+            tbx_EmailCli.Size = new Size(202, 23);
+            tbx_EmailCli.TabIndex = 10;
             // 
             // CadastroCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(425, 450);
-            Controls.Add(button1);
-            Controls.Add(maskedTextBox1);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(tbx_EmailCli);
+            Controls.Add(tbx_NomeCli);
+            Controls.Add(btn_CadastrarCli);
+            Controls.Add(foneArea);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -134,9 +132,9 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private MaskedTextBox maskedTextBox1;
-        private Button button1;
+        private MaskedTextBox foneArea;
+        private Button btn_CadastrarCli;
+        private TextBox tbx_NomeCli;
+        private TextBox tbx_EmailCli;
     }
 }
