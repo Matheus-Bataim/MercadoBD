@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label3 = new Label();
             label2 = new Label();
             hhhhh = new Label();
             btn_cadastrarFun = new Button();
@@ -41,25 +40,15 @@
             Total = new Label();
             SuspendLayout();
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(323, 358);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 25);
-            label3.TabIndex = 14;
-            label3.Text = "Itens";
-            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(321, 251);
+            label2.Location = new Point(299, 251);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(54, 25);
+            label2.Size = new Size(104, 25);
             label2.TabIndex = 13;
-            label2.Text = "Email";
+            label2.Text = "Funcionário";
             // 
             // hhhhh
             // 
@@ -149,7 +138,6 @@
             Controls.Add(tbx_totalPedi);
             Controls.Add(label4);
             Controls.Add(dataPedi);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(hhhhh);
             Controls.Add(btn_cadastrarFun);
@@ -163,8 +151,6 @@
         }
 
         #endregion
-
-        private Label label3;
         private Label label2;
         private Label hhhhh;
         private Button btn_cadastrarFun;

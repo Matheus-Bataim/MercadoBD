@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+using MercadoBD.Model;
+
 namespace MercadoBD.View.TelaProduto
 {
     public partial class CadastrarProduto : Form
@@ -15,6 +18,10 @@ namespace MercadoBD.View.TelaProduto
         public CadastrarProduto()
         {
             InitializeComponent();
+        }
+
+        private void btn_CadProd_Click(object sender, EventArgs e, Produto produto)
+        {
         }
     }
 }

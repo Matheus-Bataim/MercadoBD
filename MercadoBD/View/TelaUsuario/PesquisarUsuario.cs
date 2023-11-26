@@ -16,5 +16,10 @@ namespace MercadoBD.View.TelaUsuario
         {
             InitializeComponent();
         }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
