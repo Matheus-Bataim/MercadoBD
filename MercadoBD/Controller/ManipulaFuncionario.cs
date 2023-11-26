@@ -8,13 +8,15 @@ using System.Threading.Tasks;
 
 namespace MercadoBD.Controller
 {
-    internal class ManipulaFuncionario
+    internal class ManipulaFuncionario     
     {
         public void AddFuncionario()
         {
             SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar());
-            SqlCommand cmd = new SqlCommand("P_InserirFuncionarios",cn);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            SqlCommand cmd = new SqlCommand("P_InserirFuncionarios", cn)
+            {
+                CommandType = System.Data.CommandType.StoredProcedure
+            };
             try
             {
                 
@@ -35,6 +37,7 @@ namespace MercadoBD.Controller
             {
                 throw;
             }
+
         }
     }
 }

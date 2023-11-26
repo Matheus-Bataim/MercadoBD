@@ -16,5 +16,10 @@ namespace MercadoBD.View.TelaPedido
         {
             InitializeComponent();
         }
+
+        private void btn_cadastrarFun_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

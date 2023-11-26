@@ -17,9 +17,10 @@ namespace MercadoBD.Controller
             SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar());
 
             //Instancia a Procedure
-            SqlCommand cmd = new SqlCommand("P_InserirClientes ", cn);
-
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            SqlCommand cmd = new SqlCommand("P_InserirClientes ", cn)
+            {
+                CommandType = System.Data.CommandType.StoredProcedure
+            };
             try
             {
                 //pega o que esta pegando do .Cliente e colocando nas variaveis da Procedures
@@ -28,16 +29,22 @@ namespace MercadoBD.Controller
                 cmd.Parameters.AddWithValue("@FoneClientes", Cliente.FoneClientes);
 
                 //Abre o Banco de Dados
-                cn.Open();
+                conect(cn);
 
                 //Executa a Procedure "P_InserirClientes"
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Cliente Cadastrado com Sucesso");
 
 
-            }catch (Exception ex)
+            }
+            catch
             {
+                throw;
+            }
 
+            static void conect(SqlConnection cn)
+            {
+                cn.Open();
             }
         }
     }
