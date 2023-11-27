@@ -1,6 +1,7 @@
 ﻿using MercadoBD.View.TelaCliente;
 using MercadoBD.View.TelaFuncionarios;
 using MercadoBD.View.TelaProduto;
+using MercadoBD.View.TelaUsuario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -105,14 +106,14 @@ namespace MercadoBD.View
 
         private void alterarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            AlterarProduto alterarProduto = new AlterarProduto();
-            alterarProduto.Show();
+            AlterarUsuario alterarUsuario = new AlterarUsuario();
+            alterarUsuario.Show();
         }
 
         private void deletarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            DeletarFuncionario deletarFuncionario = new();
-            deletarFuncionario.Show();
+            DeletarUsuario deletarUsuario = new DeletarUsuario();
+            deletarUsuario.Show();
         }
 
         private void pesquisarToolStripMenuItem3_Click(object sender, EventArgs e)
