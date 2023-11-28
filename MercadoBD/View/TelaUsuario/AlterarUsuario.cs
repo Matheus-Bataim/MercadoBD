@@ -16,5 +16,15 @@ namespace MercadoBD.View.TelaUsuario
         {
             InitializeComponent();
         }
+
+        private void btn_BuscarAltUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_AltUser_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

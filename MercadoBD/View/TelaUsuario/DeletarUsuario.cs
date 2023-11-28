@@ -1,5 +1,6 @@
 ﻿using MercadoBD.Controller;
 using MercadoBD.Model;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,25 +22,29 @@ namespace MercadoBD.View.TelaUsuario
 
         private void btn_exUser_Click(object sender, EventArgs e)
         {
-            Usuario.Id_Usuarios=Convert.ToInt32(tbx_buscaDelser.Text);
+            Usuario.Id_Usuarios = Convert.ToInt32(tbx_buscaDelser.Text);
 
             ManipulaUsuario manipulaUsuario = new ManipulaUsuario();
             manipulaUsuario.DeletarUsuario();
+
             tbx_NomeDelUser.Text = string.Empty;
             tbx_EmailDelUser.Text = string.Empty;
             tbx_NomeDelUser.Text = "0";
             cbox_tipoExUser.Text = string.Empty;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_BuscarExUser_Click(object sender, EventArgs e)
         {
-
+            
             Usuario.Id_Usuarios = Convert.ToInt32(tbx_buscaDelser.Text);
-            ManipulaUsuario manipulaUsuario = new ManipulaUsuario();
+            
+            ManipulaUsuario manipulaUsuario=new ManipulaUsuario();
             manipulaUsuario.VisualizarUsuario();
             cbox_tipoExUser.Text = Usuario.Tipo;
             tbx_NomeDelUser.Text = Funcionario.NomeFuncionarios;
             tbx_EmailDelUser.Text = Funcionario.EmailFuncionarios;
+            tbx_buscaDelser.Text = Usuario.Id_Usuarios.ToString();
+
         }
     }
 }

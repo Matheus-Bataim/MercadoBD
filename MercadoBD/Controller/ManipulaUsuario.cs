@@ -18,76 +18,61 @@ namespace MercadoBD.Controller
         public void DeletarUsuario()
         {
             SqlConnection cn = new(ConexaoBanco.Conectar());
-            SqlCommand cmd = new SqlCommand("P_DeletarProdutos", cn)
-            {
-                CommandType = System.Data.CommandType.StoredProcedure
-            };
+            SqlCommand cmd = new SqlCommand("P_DeletarUsuarios", cn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
             try
             {
                 cmd.Parameters.AddWithValue("@Id_Usuarios", Usuario.Id_Usuarios);
-                conect(cn) ;
+                cn.Open() ;
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Pedido Excluido com Sucesso");
+                MessageBox.Show("Usuario Excluido com Sucesso");
             }catch (Exception )
             {
                 throw;
             }
-            static void conect(SqlConnection cn)
-            {
-                cn.Open();
-            }
+            
         }
-        public void VisualizarUsuario(SqlConnection cnr)
+        public void VisualizarUsuario()
         {
             SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar());
-            SqlCommand cmd = new SqlCommand("P_BuscarUsuarios", cn)
-            {
-                CommandType=System.Data.CommandType.StoredProcedure 
-            };
+            SqlCommand cmd = new SqlCommand("P_BuscarUsuarios", cn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            
             try//Tenta executar 
             {
-                cmd.Parameters.AddWithValue("id_FuncionariosFK", Usuario.Id_Usuarios);
-              conect(cn);
-               var dr= cmd.ExecuteReader();//todo conteudo esta nesta var
+                cmd.Parameters.AddWithValue("@Id_Funcionarios", Usuario.Id_Usuarios);
+                cn.Open();
+                var dr= cmd.ExecuteReader();//todo conteudo esta nesta var
 
                 if (dr.Read())//se dr for lida 
                 {
                     Usuario.Id_Usuarios = Convert.ToInt32(dr["Id_Usuarios"]);
-                    Usuario.Tipo=dr["Tipo"].ToString();
-                    Usuario.DataAcesso=dr["DataAcesso"].ToString();
-                    Usuario.id_FuncionariosFK= Convert.ToInt32(dr["DataAcesso"]); 
-                    Usuario.SenhaUsuarios=dr["DataAcesso"].ToString();
-                    Funcionario.NomeFuncionarios = dr["NomeFuncionario"].ToString();
-                    Funcionario.EmailFuncionarios = dr["EmailFuncionario"].ToString();
+                    Usuario.Tipo = dr["Tipo"].ToString();
+                    Usuario.DataAcesso = dr["DataAcesso"].ToString();
+                    Usuario.id_FuncionariosFK= Convert.ToInt32(dr["id_FuncionariosFK"]); 
+                    Usuario.SenhaUsuarios = dr["SenhaUsuarios"].ToString();
+                    Funcionario.NomeFuncionarios = dr["NomeFuncionarios"].ToString();
+                    Funcionario.EmailFuncionarios = dr["EmailFuncionarios"].ToString();
                 }
 
                 else
                 {
                     Usuario.Id_Usuarios=0;
-                    Usuario.Tipo = string.Empty;
-                    Usuario.DataAcesso = string.Empty;
+                    Usuario.Tipo = "";
+                    Usuario.DataAcesso = "";
                     Usuario.id_FuncionariosFK = 0;
                     Usuario.SenhaUsuarios = "";
-                    Funcionario.NomeFuncionarios= string.Empty;
-                    Funcionario.EmailFuncionarios= string.Empty;
                     MessageBox.Show("Tente novamente");
                 }
             }
-            catch (Exception )//Se não dar certo, mostra o erro 
+            catch (Exception ex )//Se não dar certo, mostra o erro 
             {
-                throw;
+                MessageBox.Show(ex.Message);
             }
-            static void conect(SqlConnection cn)
-            {
-                cn.Open();
-            }
+
+           
         }
         public void AlterarUsuario()
-        {
-
-        }
-
-        internal void VisualizarUsuario()
         {
             
         }

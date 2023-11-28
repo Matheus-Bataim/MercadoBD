@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MercadoBD.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace MercadoBD.View.TelaUsuario
         public CadastrarUsuario()
         {
             InitializeComponent();
+        }
+
+        private void btn_CadUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -31,8 +31,10 @@
             label1 = new Label();
             label2 = new Label();
             tbx_buscaDelser = new TextBox();
-            button1 = new Button();
+            btn_BuscarExUser = new Button();
             groupBox1 = new GroupBox();
+            label6 = new Label();
+            tbx_idExUser = new TextBox();
             btn_exUser = new Button();
             label5 = new Label();
             label4 = new Label();
@@ -58,9 +60,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(37, 95);
             label2.Name = "label2";
-            label2.Size = new Size(151, 15);
+            label2.Size = new Size(171, 30);
             label2.TabIndex = 1;
-            label2.Text = "Digite o código do Usuário:";
+            label2.Text = "Digite o código do Funcionário\r\n:";
             // 
             // tbx_buscaDelser
             // 
@@ -69,18 +71,20 @@
             tbx_buscaDelser.Size = new Size(124, 23);
             tbx_buscaDelser.TabIndex = 2;
             // 
-            // button1
+            // btn_BuscarExUser
             // 
-            button1.Location = new Point(366, 86);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 29);
-            button1.TabIndex = 3;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btn_BuscarExUser.Location = new Point(366, 86);
+            btn_BuscarExUser.Name = "btn_BuscarExUser";
+            btn_BuscarExUser.Size = new Size(92, 29);
+            btn_BuscarExUser.TabIndex = 3;
+            btn_BuscarExUser.Text = "Buscar";
+            btn_BuscarExUser.UseVisualStyleBackColor = true;
+            btn_BuscarExUser.Click += btn_BuscarExUser_Click;
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(tbx_idExUser);
             groupBox1.Controls.Add(btn_exUser);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
@@ -94,6 +98,22 @@
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cadastro de Acesso";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(30, 210);
+            label6.Name = "label6";
+            label6.Size = new Size(60, 15);
+            label6.TabIndex = 10;
+            label6.Text = "Id Usuario";
+            // 
+            // tbx_idExUser
+            // 
+            tbx_idExUser.Location = new Point(25, 228);
+            tbx_idExUser.Name = "tbx_idExUser";
+            tbx_idExUser.Size = new Size(167, 23);
+            tbx_idExUser.TabIndex = 9;
             // 
             // btn_exUser
             // 
@@ -164,7 +184,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(482, 450);
             Controls.Add(groupBox1);
-            Controls.Add(button1);
+            Controls.Add(btn_BuscarExUser);
             Controls.Add(tbx_buscaDelser);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -183,8 +203,7 @@
         private Label label1;
         private Label label2;
         private TextBox tbx_buscaDelser;
-        private Button button1;
-        private GroupBox groupBox1;
+        private Button btn_BuscarExUser;
         private Button btn_exUser;
         private Label label5;
         private Label label4;
@@ -192,5 +211,8 @@
         private TextBox tbx_EmailDelUser;
         private Label label3;
         private TextBox tbx_NomeDelUser;
+        private Label label6;
+        private TextBox tbx_idExUser;
+        protected internal GroupBox groupBox1;
     }
 }

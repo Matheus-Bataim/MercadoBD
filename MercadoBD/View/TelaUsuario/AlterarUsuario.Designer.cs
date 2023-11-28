@@ -30,20 +30,20 @@
         {
             label2 = new Label();
             btn_BuscarAltUser = new Button();
-            tbx_AltUser = new TextBox();
+            tbx_AltBuscarFun = new TextBox();
             label1 = new Label();
             groupBox1 = new GroupBox();
-            button1 = new Button();
+            AltNumUser = new TextBox();
+            label7 = new Label();
+            btn_AltUser = new Button();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
-            comboBox1 = new ComboBox();
-            textBox4 = new TextBox();
-            tbx_EmailUser = new TextBox();
+            cbx_TipoAltUser = new ComboBox();
+            tbx_SenhaAltUser = new TextBox();
+            tbx_EmailAltUser = new TextBox();
             label3 = new Label();
-            tbx_NomeUser = new TextBox();
-            label7 = new Label();
-            textBox1 = new TextBox();
+            tbx_NomeAltUser = new TextBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -65,13 +65,14 @@
             btn_BuscarAltUser.TabIndex = 0;
             btn_BuscarAltUser.Text = "Buscar";
             btn_BuscarAltUser.UseVisualStyleBackColor = true;
+            btn_BuscarAltUser.Click += btn_BuscarAltUser_Click;
             // 
-            // tbx_AltUser
+            // tbx_AltBuscarFun
             // 
-            tbx_AltUser.Location = new Point(104, 114);
-            tbx_AltUser.Name = "tbx_AltUser";
-            tbx_AltUser.Size = new Size(152, 23);
-            tbx_AltUser.TabIndex = 1;
+            tbx_AltBuscarFun.Location = new Point(104, 114);
+            tbx_AltBuscarFun.Name = "tbx_AltBuscarFun";
+            tbx_AltBuscarFun.Size = new Size(152, 23);
+            tbx_AltBuscarFun.TabIndex = 1;
             // 
             // label1
             // 
@@ -79,23 +80,23 @@
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(129, 82);
             label1.Name = "label1";
-            label1.Size = new Size(190, 17);
+            label1.Size = new Size(216, 17);
             label1.TabIndex = 0;
-            label1.Text = "Digite a Matricula do Usuário";
+            label1.Text = "Digite a Matricula do Funcionário";
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(AltNumUser);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(btn_AltUser);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(textBox4);
-            groupBox1.Controls.Add(tbx_EmailUser);
+            groupBox1.Controls.Add(cbx_TipoAltUser);
+            groupBox1.Controls.Add(tbx_SenhaAltUser);
+            groupBox1.Controls.Add(tbx_EmailAltUser);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(tbx_NomeUser);
+            groupBox1.Controls.Add(tbx_NomeAltUser);
             groupBox1.Location = new Point(37, 162);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(423, 360);
@@ -103,15 +104,33 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Cadastro de Acesso";
             // 
-            // button1
+            // AltNumUser
             // 
-            button1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(278, 190);
-            button1.Name = "button1";
-            button1.Size = new Size(124, 60);
-            button1.TabIndex = 8;
-            button1.Text = "Alterar";
-            button1.UseVisualStyleBackColor = true;
+            AltNumUser.Location = new Point(25, 300);
+            AltNumUser.Name = "AltNumUser";
+            AltNumUser.Size = new Size(257, 23);
+            AltNumUser.TabIndex = 10;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(27, 277);
+            label7.Name = "label7";
+            label7.Size = new Size(159, 21);
+            label7.TabIndex = 9;
+            label7.Text = "Número de Usuário";
+            // 
+            // btn_AltUser
+            // 
+            btn_AltUser.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_AltUser.Location = new Point(278, 190);
+            btn_AltUser.Name = "btn_AltUser";
+            btn_AltUser.Size = new Size(124, 60);
+            btn_AltUser.TabIndex = 8;
+            btn_AltUser.Text = "Alterar";
+            btn_AltUser.UseVisualStyleBackColor = true;
+            btn_AltUser.Click += btn_AltUser_Click;
             // 
             // label6
             // 
@@ -143,27 +162,28 @@
             label4.TabIndex = 5;
             label4.Text = "E_mail";
             // 
-            // comboBox1
+            // cbx_TipoAltUser
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(27, 172);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 4;
+            cbx_TipoAltUser.Enabled = false;
+            cbx_TipoAltUser.FormattingEnabled = true;
+            cbx_TipoAltUser.Location = new Point(27, 172);
+            cbx_TipoAltUser.Name = "cbx_TipoAltUser";
+            cbx_TipoAltUser.Size = new Size(121, 23);
+            cbx_TipoAltUser.TabIndex = 4;
             // 
-            // textBox4
+            // tbx_SenhaAltUser
             // 
-            textBox4.Location = new Point(27, 227);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 3;
+            tbx_SenhaAltUser.Location = new Point(27, 227);
+            tbx_SenhaAltUser.Name = "tbx_SenhaAltUser";
+            tbx_SenhaAltUser.Size = new Size(100, 23);
+            tbx_SenhaAltUser.TabIndex = 3;
             // 
-            // tbx_EmailUser
+            // tbx_EmailAltUser
             // 
-            tbx_EmailUser.Location = new Point(27, 114);
-            tbx_EmailUser.Name = "tbx_EmailUser";
-            tbx_EmailUser.Size = new Size(255, 23);
-            tbx_EmailUser.TabIndex = 2;
+            tbx_EmailAltUser.Location = new Point(27, 114);
+            tbx_EmailAltUser.Name = "tbx_EmailAltUser";
+            tbx_EmailAltUser.Size = new Size(255, 23);
+            tbx_EmailAltUser.TabIndex = 2;
             // 
             // label3
             // 
@@ -175,29 +195,12 @@
             label3.TabIndex = 1;
             label3.Text = "Nome";
             // 
-            // tbx_NomeUser
+            // tbx_NomeAltUser
             // 
-            tbx_NomeUser.Location = new Point(27, 60);
-            tbx_NomeUser.Name = "tbx_NomeUser";
-            tbx_NomeUser.Size = new Size(255, 23);
-            tbx_NomeUser.TabIndex = 0;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(27, 277);
-            label7.Name = "label7";
-            label7.Size = new Size(147, 21);
-            label7.TabIndex = 9;
-            label7.Text = "Número de Usuário";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(25, 300);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(257, 23);
-            textBox1.TabIndex = 10;
+            tbx_NomeAltUser.Location = new Point(27, 60);
+            tbx_NomeAltUser.Name = "tbx_NomeAltUser";
+            tbx_NomeAltUser.Size = new Size(255, 23);
+            tbx_NomeAltUser.TabIndex = 0;
             // 
             // AlterarUsuario
             // 
@@ -207,7 +210,7 @@
             ClientSize = new Size(494, 570);
             Controls.Add(groupBox1);
             Controls.Add(btn_BuscarAltUser);
-            Controls.Add(tbx_AltUser);
+            Controls.Add(tbx_AltBuscarFun);
             Controls.Add(label1);
             Controls.Add(label2);
             MaximizeBox = false;
@@ -223,19 +226,19 @@
         #endregion
         private Label label2;
         private Button btn_BuscarAltUser;
-        private TextBox tbx_AltUser;
+        private TextBox tbx_AltBuscarFun;
         private Label label1;
         private GroupBox groupBox1;
-        private TextBox textBox4;
-        private TextBox tbx_EmailUser;
+        private TextBox tbx_SenhaAltUser;
+        private TextBox tbx_EmailAltUser;
         private Label label3;
-        private TextBox tbx_NomeUser;
-        private Button button1;
+        private TextBox tbx_NomeAltUser;
+        private Button btn_AltUser;
         private Label label6;
         private Label label5;
         private Label label4;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
+        private ComboBox cbx_TipoAltUser;
+        private TextBox AltNumUser;
         private Label label7;
     }
 }

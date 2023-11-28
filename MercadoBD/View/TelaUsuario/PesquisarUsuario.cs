@@ -21,5 +21,10 @@ namespace MercadoBD.View.TelaUsuario
         {
 
         }
+
+        private void btn_BuscarNomeEser_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

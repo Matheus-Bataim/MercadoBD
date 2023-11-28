@@ -100,8 +100,8 @@ namespace MercadoBD.View
 
         private void cadastrarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            CadastrarProduto cadastrarProduto = new CadastrarProduto();
-            cadastrarProduto.Show();
+            CadastrarUsuario cadastrarUsuario = new CadastrarUsuario();
+            cadastrarUsuario.Show();
         }
 
         private void alterarToolStripMenuItem3_Click(object sender, EventArgs e)
