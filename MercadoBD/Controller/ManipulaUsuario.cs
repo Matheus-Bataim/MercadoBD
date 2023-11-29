@@ -13,68 +13,88 @@ namespace MercadoBD.Controller
     {
         // SqlConnection cn = new(ConexaoBanco.Conectar());
         // SqlCommand cmd = new SqlCommand();
-       
-       
+
+
+        public void InserirUsuario() { }
+
         public void DeletarUsuario()
         {
-            SqlConnection cn = new(ConexaoBanco.Conectar());
-            SqlCommand cmd = new SqlCommand("P_DeletarUsuarios", cn);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            try
+            using (SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar()))
             {
-                cmd.Parameters.AddWithValue("@Id_Usuarios", Usuario.Id_Usuarios);
-                cn.Open() ;
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Usuario Excluido com Sucesso");
-            }catch (Exception )
-            {
-                throw;
+                using (SqlCommand cmd = new SqlCommand("P_DeletarUsuarios", cn))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    try
+                    {
+                        cn.Open();
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Usuário excluido com sucesso");
+                    }
+                    catch (Exception)
+                    {
+                        throw;
+                    }
+                }
             }
-            
         }
-        public void VisualizarUsuario()
+
+        public void VisualizarCodigoUsuario()
         {
-            SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar());
-            SqlCommand cmd = new SqlCommand("P_BuscarUsuarios", cn);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            
-            try//Tenta executar 
+            using (SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar()))
             {
-                cmd.Parameters.AddWithValue("@Id_Funcionarios", Usuario.Id_Usuarios);
-                cn.Open();
-                var dr= cmd.ExecuteReader();//todo conteudo esta nesta var
-
-                if (dr.Read())//se dr for lida 
+                using (SqlCommand cmd = new SqlCommand("P_BuscarCodigoUsuario", cn))
                 {
-                    Usuario.Id_Usuarios = Convert.ToInt32(dr["Id_Usuarios"]);
-                    Usuario.Tipo = dr["Tipo"].ToString();
-                    Usuario.DataAcesso = dr["DataAcesso"].ToString();
-                    Usuario.id_FuncionariosFK= Convert.ToInt32(dr["id_FuncionariosFK"]); 
-                    Usuario.SenhaUsuarios = dr["SenhaUsuarios"].ToString();
-                    Funcionario.NomeFuncionarios = dr["NomeFuncionarios"].ToString();
-                    Funcionario.EmailFuncionarios = dr["EmailFuncionarios"].ToString();
-                }
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    try
+                    {
+                        cn.Open();
+                        cmd.Parameters.AddWithValue(" @Id_Funcionario", Usuario.Id_Usuarios);
+                        var dr = cmd.ExecuteReader();
+                        if (dr.Read())
+                        {
+                            Usuario.Id_Usuarios = Convert.ToInt32(dr["Id_Usuario"]);
+                            Usuario.Tipo.DataAcesso = dr["DataAcesso"].ToString();
+                        }
+                        else
+                        {
+                            Usuario.id_FuncionariosFK = Convert.ToInt32(dr["Id_FuncionarioFk"]);
+                            Usuario.SenhaUsuarios = dr["senha"].ToString();
+                            Funcionario.NomeFuncionarios = Funcionario.EmailFuncionarios = dr["Nome Funcionario"].ToString();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
 
-                else
-                {
-                    Usuario.Id_Usuarios=0;
-                    Usuario.Tipo = "";
-                    Usuario.DataAcesso = "";
-                    Usuario.id_FuncionariosFK = 0;
-                    Usuario.SenhaUsuarios = "";
-                    MessageBox.Show("Tente novamente");
+                        Usuario.SenhaUsuarios = Usuario.Id_Usuarios = Usuario.Tipo.DataAcesso = string.Empty;
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
-            catch (Exception ex )//Se não dar certo, mostra o erro 
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-           
         }
         public void AlterarUsuario()
         {
-            
+            using (SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar()))
+            {
+                using (SqlCommand cmd = new SqlCommand("P_AlterarUsuario", cn))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    try
+                    {
+                        cn.Open();
+                        cmd.Parameters.AddWithValue(" @id_Usuario", Usuario.Id_Usuarios);
+                        cmd.Parameters.AddWithValue(" @Tipo", Usuario.Tipo.ToString());
+                        cmd.Parameters.AddWithValue(" @senha", Usuario.SenhaUsuarios);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Usuario Alterado com sucesso");
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message, "Usuario não alterado");
+                    }
+                }
+            }
         }
+
     }
+}
 }
