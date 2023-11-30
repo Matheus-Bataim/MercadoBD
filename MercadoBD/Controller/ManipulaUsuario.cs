@@ -11,90 +11,85 @@ namespace MercadoBD.Controller
 {
     internal class ManipulaUsuario
     {
-        // SqlConnection cn = new(ConexaoBanco.Conectar());
-        // SqlCommand cmd = new SqlCommand();
-
 
         public void InserirUsuario() { }
 
         public void DeletarUsuario()
         {
-            using (SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar()))
+            SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar());
+            SqlCommand cmd = new SqlCommand("P_DeletarUsuarios", cn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            try
             {
-                using (SqlCommand cmd = new SqlCommand("P_DeletarUsuarios", cn))
-                {
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    try
-                    {
-                        cn.Open();
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Usuário excluido com sucesso");
-                    }
-                    catch (Exception)
-                    {
-                        throw;
-                    }
-                }
+                cmd.Parameters.AddWithValue("@Id_Usuarios", Usuario.Id_Usuarios);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Usuário excluido com sucesso");
             }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
 
-        public void VisualizarCodigoUsuario()
+        //Lembrar de Corrigir o formato do P_Usuario.DataAcesso (date) para (int)
+        public void VisualizarUsuarios()
         {
-            using (SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar()))
-            {
-                using (SqlCommand cmd = new SqlCommand("P_BuscarCodigoUsuario", cn))
-                {
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    try
-                    {
-                        cn.Open();
-                        cmd.Parameters.AddWithValue(" @Id_Funcionario", Usuario.Id_Usuarios);
-                        var dr = cmd.ExecuteReader();
-                        if (dr.Read())
-                        {
-                            Usuario.Id_Usuarios = Convert.ToInt32(dr["Id_Usuario"]);
-                            Usuario.Tipo.DataAcesso = dr["DataAcesso"].ToString();
-                        }
-                        else
-                        {
-                            Usuario.id_FuncionariosFK = Convert.ToInt32(dr["Id_FuncionarioFk"]);
-                            Usuario.SenhaUsuarios = dr["senha"].ToString();
-                            Funcionario.NomeFuncionarios = Funcionario.EmailFuncionarios = dr["Nome Funcionario"].ToString();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
+            SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar());
+            SqlCommand cmd = new SqlCommand("P_BuscarCodigoUsuario", cn);
 
-                        Usuario.SenhaUsuarios = Usuario.Id_Usuarios = Usuario.Tipo.DataAcesso = string.Empty;
-                        MessageBox.Show(ex.Message);
-                    }
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            try
+            {
+                cn.Open();
+                cmd.Parameters.AddWithValue(" @Id_Funcionario", Usuario.Id_Usuarios);
+                var dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Usuario.Id_Usuarios = Convert.ToInt32(dr["Id_Usuario"]);
+                    Usuario.DataAcesso = dr["DataAcesso"].ToString();
+                }
+                else
+                {
+                    Usuario.id_FuncionariosFK = Convert.ToInt32(dr["Id_FuncionarioFk"]);
+                    Usuario.SenhaUsuarios = dr["SenhaUsuarios"].ToString();
+                    Funcionario.NomeFuncionarios = Funcionario.EmailFuncionarios = dr["Nome Funcionario"].ToString();
                 }
             }
+            catch (Exception ex)
+            {
+
+                Usuario.SenhaUsuarios = Usuario.DataAcesso = string.Empty;
+                Usuario.Id_Usuarios = 0;
+                MessageBox.Show(ex.Message);
+            }
         }
+
         public void AlterarUsuario()
         {
-            using (SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar()))
+            SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar());
+            SqlCommand cmd = new SqlCommand("P_AlterarUsuario", cn);
+
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            try
             {
-                using (SqlCommand cmd = new SqlCommand("P_AlterarUsuario", cn))
-                {
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    try
-                    {
-                        cn.Open();
-                        cmd.Parameters.AddWithValue(" @id_Usuario", Usuario.Id_Usuarios);
-                        cmd.Parameters.AddWithValue(" @Tipo", Usuario.Tipo.ToString());
-                        cmd.Parameters.AddWithValue(" @senha", Usuario.SenhaUsuarios);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Usuario Alterado com sucesso");
-                    }
-                    catch (Exception e)
-                    {
-                        MessageBox.Show(e.Message, "Usuario não alterado");
-                    }
-                }
+                cn.Open();
+                cmd.Parameters.AddWithValue(" @id_Usuario", Usuario.Id_Usuarios);
+                cmd.Parameters.AddWithValue(" @Tipo", Usuario.Tipo.ToString());
+                cmd.Parameters.AddWithValue(" @senha", Usuario.SenhaUsuarios);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Usuario Alterado com sucesso");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Usuario não alterado");
             }
         }
-
     }
 }
-}
+
+
+
+
+

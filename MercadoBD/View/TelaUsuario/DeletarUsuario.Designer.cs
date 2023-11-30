@@ -30,18 +30,16 @@
         {
             label1 = new Label();
             label2 = new Label();
-            tbx_buscaDelser = new TextBox();
-            btn_BuscarExUser = new Button();
+            tbx_ExBuscarUser = new TextBox();
+            btn_ExBuscarUser = new Button();
             groupBox1 = new GroupBox();
-            label6 = new Label();
-            tbx_idExUser = new TextBox();
-            btn_exUser = new Button();
+            btn_ExUser = new Button();
             label5 = new Label();
             label4 = new Label();
-            cbox_tipoExUser = new ComboBox();
-            tbx_EmailDelUser = new TextBox();
+            cbox_ExTipoUser = new ComboBox();
+            tbx_ExEmailUser = new TextBox();
             label3 = new Label();
-            tbx_NomeDelUser = new TextBox();
+            tbx_ExNomeUser = new TextBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,90 +47,80 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(113, 51);
+            label1.Location = new Point(161, 85);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(191, 37);
+            label1.Size = new Size(281, 54);
             label1.TabIndex = 0;
             label1.Text = "Excluir Usuário";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(37, 95);
+            label2.Location = new Point(53, 158);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(171, 30);
+            label2.Size = new Size(228, 50);
             label2.TabIndex = 1;
-            label2.Text = "Digite o código do Funcionário\r\n:";
+            label2.Text = "Digite o código do Usuário\r\n:";
             // 
-            // tbx_buscaDelser
+            // tbx_ExBuscarUser
             // 
-            tbx_buscaDelser.Location = new Point(216, 92);
-            tbx_buscaDelser.Name = "tbx_buscaDelser";
-            tbx_buscaDelser.Size = new Size(124, 23);
-            tbx_buscaDelser.TabIndex = 2;
+            tbx_ExBuscarUser.Location = new Point(309, 153);
+            tbx_ExBuscarUser.Margin = new Padding(4, 5, 4, 5);
+            tbx_ExBuscarUser.Name = "tbx_ExBuscarUser";
+            tbx_ExBuscarUser.Size = new Size(175, 31);
+            tbx_ExBuscarUser.TabIndex = 2;
             // 
-            // btn_BuscarExUser
+            // btn_ExBuscarUser
             // 
-            btn_BuscarExUser.Location = new Point(366, 86);
-            btn_BuscarExUser.Name = "btn_BuscarExUser";
-            btn_BuscarExUser.Size = new Size(92, 29);
-            btn_BuscarExUser.TabIndex = 3;
-            btn_BuscarExUser.Text = "Buscar";
-            btn_BuscarExUser.UseVisualStyleBackColor = true;
-            btn_BuscarExUser.Click += btn_BuscarExUser_Click;
+            btn_ExBuscarUser.Location = new Point(523, 143);
+            btn_ExBuscarUser.Margin = new Padding(4, 5, 4, 5);
+            btn_ExBuscarUser.Name = "btn_ExBuscarUser";
+            btn_ExBuscarUser.Size = new Size(131, 48);
+            btn_ExBuscarUser.TabIndex = 3;
+            btn_ExBuscarUser.Text = "Buscar";
+            btn_ExBuscarUser.UseVisualStyleBackColor = true;
+            btn_ExBuscarUser.Click += btn_BuscarExUser_Click;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(tbx_idExUser);
-            groupBox1.Controls.Add(btn_exUser);
+            groupBox1.Controls.Add(btn_ExUser);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(cbox_tipoExUser);
-            groupBox1.Controls.Add(tbx_EmailDelUser);
+            groupBox1.Controls.Add(cbox_ExTipoUser);
+            groupBox1.Controls.Add(tbx_ExEmailUser);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(tbx_NomeDelUser);
-            groupBox1.Location = new Point(35, 121);
+            groupBox1.Controls.Add(tbx_ExNomeUser);
+            groupBox1.Location = new Point(50, 202);
+            groupBox1.Margin = new Padding(4, 5, 4, 5);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(423, 265);
+            groupBox1.Padding = new Padding(4, 5, 4, 5);
+            groupBox1.Size = new Size(604, 442);
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Cadastro de Acesso";
+            groupBox1.Text = "Informações do Usuário";
             // 
-            // label6
+            // btn_ExUser
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(30, 210);
-            label6.Name = "label6";
-            label6.Size = new Size(60, 15);
-            label6.TabIndex = 10;
-            label6.Text = "Id Usuario";
-            // 
-            // tbx_idExUser
-            // 
-            tbx_idExUser.Location = new Point(25, 228);
-            tbx_idExUser.Name = "tbx_idExUser";
-            tbx_idExUser.Size = new Size(167, 23);
-            tbx_idExUser.TabIndex = 9;
-            // 
-            // btn_exUser
-            // 
-            btn_exUser.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_exUser.Location = new Point(278, 190);
-            btn_exUser.Name = "btn_exUser";
-            btn_exUser.Size = new Size(124, 60);
-            btn_exUser.TabIndex = 8;
-            btn_exUser.Text = "Excluir";
-            btn_exUser.UseVisualStyleBackColor = true;
-            btn_exUser.Click += btn_exUser_Click;
+            btn_ExUser.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_ExUser.Location = new Point(397, 317);
+            btn_ExUser.Margin = new Padding(4, 5, 4, 5);
+            btn_ExUser.Name = "btn_ExUser";
+            btn_ExUser.Size = new Size(177, 100);
+            btn_ExUser.TabIndex = 8;
+            btn_ExUser.Text = "Excluir";
+            btn_ExUser.UseVisualStyleBackColor = true;
+            btn_ExUser.Click += btn_exUser_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(28, 149);
+            label5.Location = new Point(40, 248);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(44, 21);
+            label5.Size = new Size(65, 32);
             label5.TabIndex = 6;
             label5.Text = "Tipo";
             // 
@@ -140,54 +128,60 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(28, 91);
+            label4.Location = new Point(40, 152);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(60, 21);
+            label4.Size = new Size(86, 32);
             label4.TabIndex = 5;
             label4.Text = "E_mail";
             // 
-            // cbox_tipoExUser
+            // cbox_ExTipoUser
             // 
-            cbox_tipoExUser.FormattingEnabled = true;
-            cbox_tipoExUser.Location = new Point(27, 172);
-            cbox_tipoExUser.Name = "cbox_tipoExUser";
-            cbox_tipoExUser.Size = new Size(121, 23);
-            cbox_tipoExUser.TabIndex = 4;
+            cbox_ExTipoUser.FormattingEnabled = true;
+            cbox_ExTipoUser.Location = new Point(39, 287);
+            cbox_ExTipoUser.Margin = new Padding(4, 5, 4, 5);
+            cbox_ExTipoUser.Name = "cbox_ExTipoUser";
+            cbox_ExTipoUser.Size = new Size(171, 33);
+            cbox_ExTipoUser.TabIndex = 4;
             // 
-            // tbx_EmailDelUser
+            // tbx_ExEmailUser
             // 
-            tbx_EmailDelUser.Location = new Point(27, 114);
-            tbx_EmailDelUser.Name = "tbx_EmailDelUser";
-            tbx_EmailDelUser.Size = new Size(255, 23);
-            tbx_EmailDelUser.TabIndex = 2;
+            tbx_ExEmailUser.Location = new Point(39, 190);
+            tbx_ExEmailUser.Margin = new Padding(4, 5, 4, 5);
+            tbx_ExEmailUser.Name = "tbx_ExEmailUser";
+            tbx_ExEmailUser.Size = new Size(363, 31);
+            tbx_ExEmailUser.TabIndex = 2;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(28, 38);
+            label3.Location = new Point(40, 63);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(52, 20);
+            label3.Size = new Size(79, 31);
             label3.TabIndex = 1;
             label3.Text = "Nome";
             // 
-            // tbx_NomeDelUser
+            // tbx_ExNomeUser
             // 
-            tbx_NomeDelUser.Location = new Point(27, 60);
-            tbx_NomeDelUser.Name = "tbx_NomeDelUser";
-            tbx_NomeDelUser.Size = new Size(255, 23);
-            tbx_NomeDelUser.TabIndex = 0;
+            tbx_ExNomeUser.Location = new Point(39, 100);
+            tbx_ExNomeUser.Margin = new Padding(4, 5, 4, 5);
+            tbx_ExNomeUser.Name = "tbx_ExNomeUser";
+            tbx_ExNomeUser.Size = new Size(363, 31);
+            tbx_ExNomeUser.TabIndex = 0;
             // 
             // DeletarUsuario
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(482, 450);
+            ClientSize = new Size(689, 750);
             Controls.Add(groupBox1);
-            Controls.Add(btn_BuscarExUser);
-            Controls.Add(tbx_buscaDelser);
+            Controls.Add(btn_ExBuscarUser);
+            Controls.Add(tbx_ExBuscarUser);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "DeletarUsuario";
@@ -202,17 +196,15 @@
 
         private Label label1;
         private Label label2;
-        private TextBox tbx_buscaDelser;
-        private Button btn_BuscarExUser;
-        private Button btn_exUser;
+        private TextBox tbx_ExBuscarUser;
+        private Button btn_ExBuscarUser;
+        private Button btn_ExUser;
         private Label label5;
         private Label label4;
-        private ComboBox cbox_tipoExUser;
-        private TextBox tbx_EmailDelUser;
+        private ComboBox cbox_ExTipoUser;
+        private TextBox tbx_ExEmailUser;
         private Label label3;
-        private TextBox tbx_NomeDelUser;
-        private Label label6;
-        private TextBox tbx_idExUser;
+        private TextBox tbx_ExNomeUser;
         protected internal GroupBox groupBox1;
     }
 }
