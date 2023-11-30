@@ -96,15 +96,15 @@ namespace MercadoBD.Controller
         public void AlterarUsuario()
         {
             SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar());
-            SqlCommand cmd = new SqlCommand("P_AlterarUsuario", cn);
+            SqlCommand cmd = new SqlCommand("P_AlterarUsuarios", cn);
 
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             try
             {
                 cn.Open();
-                cmd.Parameters.AddWithValue(" @id_Usuario", Usuario.Id_Usuarios);
-                cmd.Parameters.AddWithValue(" @Tipo", Usuario.Tipo.ToString());
-                cmd.Parameters.AddWithValue(" @senha", Usuario.SenhaUsuarios);
+                cmd.Parameters.AddWithValue("@Id_Usuarios", Usuario.Id_Usuarios);
+                cmd.Parameters.AddWithValue("@Tipo", Usuario.Tipo.ToString());
+                cmd.Parameters.AddWithValue("@SenhaUsuarios", Usuario.SenhaUsuarios);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Usuario Alterado com sucesso");
             }
