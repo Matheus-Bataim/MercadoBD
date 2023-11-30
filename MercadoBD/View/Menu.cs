@@ -118,8 +118,8 @@ namespace MercadoBD.View
 
         private void pesquisarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            PesquisarFuncionario pesquisarFuncionario = new();
-            pesquisarFuncionario.Show();
+            PesquisarUsuario pesquisarUsuario = new();
+            pesquisarUsuario.Show();
         }
     }
 }

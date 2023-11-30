@@ -29,49 +29,59 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            label2 = new Label();
+            tbx_MatriFunUser = new TextBox();
             btn_CadUser = new Button();
             label6 = new Label();
             label5 = new Label();
             cbx_TipoCadUser = new ComboBox();
             tbx_SenhaCadUser = new TextBox();
             label1 = new Label();
-            tbx_CadEmailUser = new TextBox();
-            tbx_CadNomeUser = new TextBox();
-            label2 = new Label();
-            label3 = new Label();
-            tbx_CadCodUser = new TextBox();
-            label4 = new Label();
-            btn_CadBuscarUser = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(tbx_CadNomeUser);
-            groupBox1.Controls.Add(tbx_CadEmailUser);
+            groupBox1.Controls.Add(tbx_MatriFunUser);
             groupBox1.Controls.Add(btn_CadUser);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(cbx_TipoCadUser);
             groupBox1.Controls.Add(tbx_SenhaCadUser);
-            groupBox1.Location = new Point(44, 212);
-            groupBox1.Margin = new Padding(4, 5, 4, 5);
+            groupBox1.Location = new Point(31, 127);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 5, 4, 5);
-            groupBox1.Size = new Size(604, 453);
+            groupBox1.Size = new Size(423, 272);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cadastro de Acesso";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(28, 92);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(202, 21);
+            label2.TabIndex = 21;
+            label2.Text = "Matrícula do Funcionário";
+            // 
+            // tbx_MatriFunUser
+            // 
+            tbx_MatriFunUser.Location = new Point(28, 115);
+            tbx_MatriFunUser.Margin = new Padding(2);
+            tbx_MatriFunUser.Name = "tbx_MatriFunUser";
+            tbx_MatriFunUser.Size = new Size(121, 23);
+            tbx_MatriFunUser.TabIndex = 20;
+            
+            // 
             // btn_CadUser
             // 
             btn_CadUser.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_CadUser.Location = new Point(397, 317);
-            btn_CadUser.Margin = new Padding(4, 5, 4, 5);
+            btn_CadUser.Location = new Point(278, 190);
             btn_CadUser.Name = "btn_CadUser";
-            btn_CadUser.Size = new Size(177, 100);
+            btn_CadUser.Size = new Size(124, 60);
             btn_CadUser.TabIndex = 8;
             btn_CadUser.Text = "Cadastrar";
             btn_CadUser.UseVisualStyleBackColor = true;
@@ -81,10 +91,9 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(31, 332);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(28, 154);
             label6.Name = "label6";
-            label6.Size = new Size(82, 32);
+            label6.Size = new Size(57, 21);
             label6.TabIndex = 7;
             label6.Text = "Senha";
             // 
@@ -92,114 +101,45 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(31, 245);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(28, 31);
             label5.Name = "label5";
-            label5.Size = new Size(65, 32);
+            label5.Size = new Size(44, 21);
             label5.TabIndex = 6;
             label5.Text = "Tipo";
             // 
             // cbx_TipoCadUser
             // 
             cbx_TipoCadUser.FormattingEnabled = true;
-            cbx_TipoCadUser.Location = new Point(31, 294);
-            cbx_TipoCadUser.Margin = new Padding(4, 5, 4, 5);
+            cbx_TipoCadUser.Items.AddRange(new object[] { "Gerente", "Caixa", "Atendente" });
+            cbx_TipoCadUser.Location = new Point(28, 57);
             cbx_TipoCadUser.Name = "cbx_TipoCadUser";
-            cbx_TipoCadUser.Size = new Size(171, 33);
+            cbx_TipoCadUser.Size = new Size(121, 23);
             cbx_TipoCadUser.TabIndex = 4;
             // 
             // tbx_SenhaCadUser
             // 
-            tbx_SenhaCadUser.Location = new Point(31, 369);
-            tbx_SenhaCadUser.Margin = new Padding(4, 5, 4, 5);
+            tbx_SenhaCadUser.Location = new Point(28, 176);
             tbx_SenhaCadUser.Name = "tbx_SenhaCadUser";
-            tbx_SenhaCadUser.Size = new Size(234, 31);
+            tbx_SenhaCadUser.Size = new Size(165, 23);
             tbx_SenhaCadUser.TabIndex = 3;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(141, 15);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(99, 9);
             label1.Name = "label1";
-            label1.Size = new Size(402, 65);
+            label1.Size = new Size(271, 45);
             label1.TabIndex = 9;
             label1.Text = "Cadastrar Usuário";
             // 
-            // tbx_CadEmailUser
-            // 
-            tbx_CadEmailUser.Location = new Point(31, 209);
-            tbx_CadEmailUser.Margin = new Padding(4, 5, 4, 5);
-            tbx_CadEmailUser.Name = "tbx_CadEmailUser";
-            tbx_CadEmailUser.Size = new Size(333, 31);
-            tbx_CadEmailUser.TabIndex = 9;
-            // 
-            // tbx_CadNomeUser
-            // 
-            tbx_CadNomeUser.Location = new Point(31, 138);
-            tbx_CadNomeUser.Name = "tbx_CadNomeUser";
-            tbx_CadNomeUser.Size = new Size(333, 31);
-            tbx_CadNomeUser.TabIndex = 11;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(31, 172);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(76, 32);
-            label2.TabIndex = 12;
-            label2.Text = "Email";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(31, 92);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(83, 32);
-            label3.TabIndex = 13;
-            label3.Text = "Nome";
-            // 
-            // tbx_CadCodUser
-            // 
-            tbx_CadCodUser.Location = new Point(315, 141);
-            tbx_CadCodUser.Name = "tbx_CadCodUser";
-            tbx_CadCodUser.Size = new Size(121, 31);
-            tbx_CadCodUser.TabIndex = 14;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(67, 141);
-            label4.Name = "label4";
-            label4.Size = new Size(242, 25);
-            label4.TabIndex = 15;
-            label4.Text = "Digite a Matrícula do Usuário";
-            // 
-            // btn_CadBuscarUser
-            // 
-            btn_CadBuscarUser.Location = new Point(480, 141);
-            btn_CadBuscarUser.Name = "btn_CadBuscarUser";
-            btn_CadBuscarUser.Size = new Size(112, 34);
-            btn_CadBuscarUser.TabIndex = 16;
-            btn_CadBuscarUser.Text = "Buscar";
-            btn_CadBuscarUser.UseVisualStyleBackColor = true;
-            // 
             // CadastrarUsuario
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(699, 750);
-            Controls.Add(btn_CadBuscarUser);
-            Controls.Add(label4);
-            Controls.Add(tbx_CadCodUser);
+            ClientSize = new Size(489, 450);
             Controls.Add(label1);
             Controls.Add(groupBox1);
-            Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "CadastrarUsuario";
@@ -218,12 +158,7 @@
         private ComboBox cbx_TipoCadUser;
         private TextBox tbx_SenhaCadUser;
         private Label label1;
-        private Label label3;
         private Label label2;
-        private TextBox tbx_CadNomeUser;
-        private TextBox tbx_CadEmailUser;
-        private TextBox tbx_CadCodUser;
-        private Label label4;
-        private Button btn_CadBuscarUser;
+        private TextBox tbx_MatriFunUser;
     }
 }
