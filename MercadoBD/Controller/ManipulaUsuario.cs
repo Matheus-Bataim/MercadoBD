@@ -1,19 +1,12 @@
 ﻿using MercadoBD.Model;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MercadoBD.Controller
 {
     internal class ManipulaUsuario
     {
-
-        public void AddUsuario() 
+        public void AddUsuario()
         {
             SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar());
             SqlCommand cmd = new SqlCommand("P_InserirUsuarios", cn);
@@ -21,8 +14,8 @@ namespace MercadoBD.Controller
             try
             {
                 cmd.Parameters.AddWithValue("@Tipo", Usuario.Tipo);
-                cmd.Parameters.AddWithValue("@SenhaUsuarios", Usuario.SenhaUsuarios);
                 cmd.Parameters.AddWithValue("@Id_FuncionariosFK", Funcionario.Id_Funcioarios);
+                cmd.Parameters.AddWithValue("@SenhaUsuarios", Usuario.SenhaUsuarios);
                 cn.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Usuário incluido com sucesso");
@@ -31,9 +24,8 @@ namespace MercadoBD.Controller
             {
                 throw;
             }
-            
-        }
 
+        }
         public void DeletarUsuario()
         {
             SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar());
@@ -52,18 +44,37 @@ namespace MercadoBD.Controller
             }
 
         }
+        public void AlterarUsuario()
+        {
+            SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar());
+            SqlCommand cmd = new SqlCommand("P_AlterarUsuarios", cn);
 
-        
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            try
+            {
+                cn.Open();
+                cmd.Parameters.AddWithValue("@Id_Usuarios", Usuario.Id_Usuarios);
+                cmd.Parameters.AddWithValue("@Tipo", Usuario.Tipo);
+                cmd.Parameters.AddWithValue("@SenhaUsuarios", Usuario.SenhaUsuarios);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Usuario Alterado com sucesso");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Usuario não alterado");
+            }
+        }
         public void VisualizarUsuarios()
         {
             SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar());
             SqlCommand cmd = new SqlCommand("P_BuscarUsuarios", cn);
 
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                try
-                {
+            try
+            {
                 cn.Open();
                 cmd.Parameters.AddWithValue("@Id_Funcionarios", Usuario.Id_Usuarios);
+
                 var dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
@@ -82,35 +93,11 @@ namespace MercadoBD.Controller
                     Usuario.Id_FuncionariosFK = 0;
                     Usuario.SenhaUsuarios = "";
                     MessageBox.Show("Busca não Executada..");
-
                 }
             }
             catch (Exception ex)
             {
-
-              
                 MessageBox.Show(ex.Message);
-            }
-        }
-
-        public void AlterarUsuario()
-        {
-            SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar());
-            SqlCommand cmd = new SqlCommand("P_AlterarUsuarios", cn);
-
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            try
-            {
-                cn.Open();
-                cmd.Parameters.AddWithValue("@Id_Usuarios", Usuario.Id_Usuarios);
-                cmd.Parameters.AddWithValue("@Tipo", Usuario.Tipo.ToString());
-                cmd.Parameters.AddWithValue("@SenhaUsuarios", Usuario.SenhaUsuarios);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Usuario Alterado com sucesso");
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message, "Usuario não alterado");
             }
         }
         public static BindingSource VisualizarTipoUsuario()
@@ -119,7 +106,7 @@ namespace MercadoBD.Controller
             SqlCommand cmd = new SqlCommand("P_BuscarTipoUsuario", cn);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@TipoUsuarios", Usuario.Tipo);        
+            cmd.Parameters.AddWithValue("@TipoUsuarios", Usuario.Tipo);
             cn.Open();
             cmd.ExecuteNonQuery();
             SqlDataAdapter sqlData = new SqlDataAdapter(cmd);
@@ -127,9 +114,9 @@ namespace MercadoBD.Controller
             sqlData.Fill(table);
             BindingSource dados = new BindingSource();
             dados.DataSource = table;
-             
+
             return dados;
-           
+
         }
     }
 }

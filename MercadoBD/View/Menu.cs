@@ -2,6 +2,7 @@
 using MercadoBD.View.TelaFuncionarios;
 using MercadoBD.View.TelaProduto;
 using MercadoBD.View.TelaUsuario;
+using MercadoBD.View.TelaPedido;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace MercadoBD.View
 {
@@ -64,7 +66,7 @@ namespace MercadoBD.View
 
         private void deletarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            DeletarFuncionario deletarFuncionario = new();
+            TelaFuncionarios.DeletarFuncionario deletarFuncionario = new();
             deletarFuncionario.Show();
         }
 
@@ -88,7 +90,7 @@ namespace MercadoBD.View
 
         private void deletarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            DeletarFuncionario delarFuncionario = new();
+            TelaFuncionarios.DeletarFuncionario delarFuncionario = new();
             delarFuncionario.Show();
         }
 
@@ -120,6 +122,36 @@ namespace MercadoBD.View
         {
             PesquisarUsuario pesquisarUsuario = new();
             pesquisarUsuario.Show();
+        }
+
+        private void cadastrarToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            CadastroPedido cadastroPedido = new CadastroPedido();
+            cadastroPedido.Show();
+        }
+
+        private void alterarToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            AlterarPedido alterarPedido = new AlterarPedido();
+            alterarPedido.Show();
+        }
+
+        private void deletarToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            DeletarPedido deletarPedido = new DeletarPedido();
+            deletarPedido.Show();
+        }
+
+        private void pesquisarToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            PesquisarPedido pesquisarPedido = new PesquisarPedido();
+            pesquisarPedido.Show();
+        }
+
+        private void pDVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaPDV telaPDV = new TelaPDV();
+            telaPDV.Show();
         }
     }
 }

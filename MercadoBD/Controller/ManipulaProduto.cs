@@ -1,6 +1,7 @@
 ﻿using MercadoBD.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -46,6 +47,29 @@ namespace MercadoBD.Controller
             {
                 cn.Open();
             }
+        }
+
+        public static BindingSource VisualizarProduto()
+        {
+            SqlConnection cn = new SqlConnection(ConexaoBanco.Conectar());
+            SqlCommand cmd = new SqlCommand("P_BuscarCodigoProdutos", cn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id_Produtos", Produto.Id_Produtos);
+            cn.Open();
+            cmd.ExecuteNonQuery();
+
+            
+            SqlDataAdapter sqlData = new SqlDataAdapter(cmd);//os dados que vem do "cmd" é Adaptado/organizado em "sqlData
+            DataTable table = new DataTable();//  cria/instância a tabela em "table"
+
+            
+            sqlData.Fill(table);//preenche a table com o que foi inserido em sqlData
+
+            BindingSource dados = new BindingSource(); // instância BindingSource
+            dados.DataSource = table; // Recebe table
+            
+            return dados;
+
         }
     }
 }
