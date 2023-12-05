@@ -8,7 +8,7 @@ namespace MercadoBD.Model
 {
     internal class Funcionario
     {
-        private static string id_fun;
+        private static int id_fun;
         private static string nome;
         private static string email;
         private static string fone;
@@ -17,6 +17,6 @@ namespace MercadoBD.Model
         public static string NomeFuncionarios { get => nome; set => nome = value; }
         public static string EmailFuncionarios { get => email; set => email = value; }
         public static string FoneFuncionarios { get => fone; set => fone = value; }
-        public static string Id_Funcioarios { get => id_fun; set => id_fun = value; }
+        public static int Id_Funcionarios { get => id_fun; set => id_fun = value; }
     }
 }

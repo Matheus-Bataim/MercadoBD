@@ -104,6 +104,7 @@
             btn_AltUser.TabIndex = 8;
             btn_AltUser.Text = "Alterar";
             btn_AltUser.UseVisualStyleBackColor = true;
+            btn_AltUser.Click += btn_AltUser_Click;
             // 
             // label6
             // 
@@ -178,7 +179,7 @@
             // btn_AltBuscarUser
             // 
             btn_AltBuscarUser.Location = new Point(327, 87);
-            btn_AltBuscarUser.Margin = new Padding(2, 2, 2, 2);
+            btn_AltBuscarUser.Margin = new Padding(2);
             btn_AltBuscarUser.Name = "btn_AltBuscarUser";
             btn_AltBuscarUser.Size = new Size(78, 20);
             btn_AltBuscarUser.TabIndex = 19;
@@ -199,7 +200,7 @@
             // tbx_AltBuscarUser
             // 
             tbx_AltBuscarUser.Location = new Point(211, 87);
-            tbx_AltBuscarUser.Margin = new Padding(2, 2, 2, 2);
+            tbx_AltBuscarUser.Margin = new Padding(2);
             tbx_AltBuscarUser.Name = "tbx_AltBuscarUser";
             tbx_AltBuscarUser.Size = new Size(86, 23);
             tbx_AltBuscarUser.TabIndex = 17;

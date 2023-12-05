@@ -14,7 +14,7 @@ namespace MercadoBD.Controller
             try
             {
                 cmd.Parameters.AddWithValue("@Tipo", Usuario.Tipo);
-                cmd.Parameters.AddWithValue("@Id_FuncionariosFK", Funcionario.Id_Funcioarios);
+                cmd.Parameters.AddWithValue("@Id_FuncionariosFK", Usuario.Id_FuncionariosFK);
                 cmd.Parameters.AddWithValue("@SenhaUsuarios", Usuario.SenhaUsuarios);
                 cn.Open();
                 cmd.ExecuteNonQuery();

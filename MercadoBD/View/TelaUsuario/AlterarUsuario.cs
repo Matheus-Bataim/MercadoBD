@@ -19,8 +19,13 @@ namespace MercadoBD.View.TelaUsuario
             Usuario.Tipo = cbx_TipoAltUser.Text;
             Usuario.SenhaUsuarios = tbx_SenhaAltUser.Text;
             Usuario.Id_Usuarios = Convert.ToInt32(tbx_NumAltUser.Text);
-            
 
+
+
+        }
+
+        private void btn_AltUser_Click(object sender, EventArgs e)
+        {
 
         }
     }

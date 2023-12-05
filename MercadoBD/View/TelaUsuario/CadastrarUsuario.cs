@@ -21,8 +21,9 @@ namespace MercadoBD.View.TelaUsuario
 
         private void btn_CadUser_Click(object sender, EventArgs e)
         {
-            Funcionario.Id_Funcioarios=tbx_MatriFunUser.Text;
             Usuario.Tipo = cbx_TipoCadUser.Text;
+            Usuario.Id_FuncionariosFK= Convert.ToInt32(tbx_MatriFunUser.Text);
+            
             Usuario.SenhaUsuarios = tbx_SenhaCadUser.Text;
 
             ManipulaUsuario manipulaUsuario = new ManipulaUsuario();
