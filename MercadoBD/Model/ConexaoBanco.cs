@@ -15,7 +15,7 @@ namespace MercadoBD.Model
         //void : método vazio
         public static string Conectar()
         {
-            return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\matheus.pbataim\source\repos\MercadoBD\MercadoBD\Banco de Dados\MercadoBD.mdf"";Integrated Security=True";
+            return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\matheus.pbataim\source\repos\Math-droid\MercadoBD\MercadoBD\Banco de Dados\MercadoBD.mdf"";Integrated Security=True";
         }
     }
 }

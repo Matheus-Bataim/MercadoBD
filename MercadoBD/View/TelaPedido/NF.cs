@@ -53,9 +53,9 @@ namespace MercadoBD.View.TelaPedido
 
             for (int i = 0; i < telaPDV.grid_Itens.RowCount - 1; i++)
             {
-                Pedido.Id_PedutosFk = (int)telaPDV.grid_Itens.Rows[i].Cells[1].Value.ToString();
-               Pedido.QtdProdutos = (int)telaPDV.grid_Itens.Rows[i].Cells[2].Value;
-                Pedido.TotalPedido = (decimal)telaPDV.grid_Itens.Rows[i].Cells[2].Value;
+              //  Pedido.Id_PedutosFk = (int)telaPDV.grid_Itens.Rows[i].Cells[1].Value.ToString();
+             //  Pedido.QtdProdutos = (int)telaPDV.grid_Itens.Rows[i].Cells[2].Value;
+               // Pedido.TotalPedido = (decimal)telaPDV.grid_Itens.Rows[i].Cells[2].Value;
 
                 ManipulaPedido manipulaPedido = new();
                 manipulaPedido.CadastrarPedido();
