@@ -12,7 +12,7 @@ namespace MercadoBD.View.TelaUsuario
         private void btn_AltBuscarUser_Click(object sender, EventArgs e)
         {
             ManipulaUsuario manipulaUsuario = new ManipulaUsuario();
-            manipulaUsuario.AlterarUsuario();
+            manipulaUsuario.VisualizarUsuarios();
 
             Funcionario.NomeFuncionarios = tbx_NomeAltUser.Text;
             Funcionario.EmailFuncionarios = tbx_EmailAltUser.Text;

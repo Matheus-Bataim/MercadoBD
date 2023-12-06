@@ -5,22 +5,23 @@ namespace MercadoBD.View.TelaPedido
 {
     public partial class TelaPDV : Form
     {
+
         public TelaPDV()
         {
             InitializeComponent();
         }
 
-        private void btn_PdvConfirmar_Click(object sender, EventArgs e)
-        {   
-            Produto.Id_Produtos=Convert.ToInt32(btn_PdvConfirmar.Text);
-            dataGridView1.DataSource = ManipulaProduto.VisualizarProduto();
+        private void btn_PdvBuscar_Click(object sender, EventArgs e)
+        {
+            Produto.Id_Produtos = Convert.ToInt32(btn_PdvBuscar.Text);
+            grid_Itens.DataSource = ManipulaProduto.VisualizarProduto();
 
-            dataGridView1.Columns[0].HeaderCell.Value = "Código";
-            dataGridView1.Columns[1].HeaderCell.Value = "Produto";
-            dataGridView1.Columns[2].HeaderCell.Value = "Marca";
-            dataGridView1.Columns[3].HeaderCell.Value = "Valor";
-            dataGridView1.Rows.Add();
+            tbx_PdvCod.Text = tbx_CodPdv.Text;
+            tbx_PdvQuanti.Text = tbx_QuantiPdv.Text;
 
+            Produto.NomeProdutos = tbx_PdvProd.Text;
+            Produto.ValorProdutos = tbx_PdvValUni.Text;
+            
         }
     }
 }

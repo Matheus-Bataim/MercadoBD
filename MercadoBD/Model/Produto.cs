@@ -14,8 +14,8 @@ namespace MercadoBD.Model
         private static string valor;
 
         public static int Id_Produtos { get => id_Produtos; set => id_Produtos = value; }
-        public string Nome { get => nome; set => nome = value; }
-        public string Marca { get => marca; set => marca = value; }
-        public string Valor { get => valor; set => valor = value; }
+        public static string NomeProdutos { get => nome; set => nome = value; }
+        public static string MarcaProdutos { get => marca; set => marca = value; }
+        public static string ValorProdutos { get => valor; set => valor = value; }
     }
 }
